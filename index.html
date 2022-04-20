@@ -25,7 +25,8 @@
 
 <script>
 	document.getElementById('signupbtn').onclick = function(event) {
-		if (typeof WebAppInterface === "function" && typeof WebAppInterface.setUserData === "function") { 
+
+		if (typeof WebAppInterface !== "undefined" && typeof WebAppInterface.setUserData === "function") { 
 		    	var email = document.getElementById('email').value;
 			var password = document.getElementById('password').value;
 			WebAppInterface.setUserData(email, password);
