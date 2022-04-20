@@ -18,23 +18,19 @@
     		<input id="password" type="password" placeholder="Enter Password" name="psw" required>
 	</div>
 	<div>
-    		<button id="signupbtn" class="signupbtn">Sign Up</button>
+    		<button id="signupbtn" type="button" class="signupbtn">Sign Up</button>
 	</div>
   </div>
 </form>
 
 <script>
-       
 	document.getElementById('signupbtn').onclick = function(event) {
-    		
-		var email = document.getElementById('email').value;
-		var password = document.getElementById('password').value;
-		//alert("test email="+ email +" password="+ password);
-
-		WebAppInterface.setUserData(email, password);
-
+		if (typeof WebAppInterface === "function" && typeof WebAppInterface.setUserData === "function") { 
+		    	var email = document.getElementById('email').value;
+			var password = document.getElementById('password').value;
+			WebAppInterface.setUserData(email, password);
+		}	
 	}
     </script>
-
 </body>
 </html>
